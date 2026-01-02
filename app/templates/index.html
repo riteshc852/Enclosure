@@ -1,0 +1,10 @@
+<!--  -->
+{% extends 'base.html' %}
+{% block content %}    
+    <!-- this user is the user we sent from the server and username is the key to the username value  -->
+    <h1>Hello {{ user.username }}</h1>
+{% for post in posts %}
+    
+<div><p>{{ post.author.username }} says : <b> {{ post.body }} </b></p></div>
+{% endfor %}
+{% endblock %} 

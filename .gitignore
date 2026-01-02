@@ -1,0 +1,44 @@
+# ========================
+# Python bytecode
+# ========================
+__pycache__/
+*.py[cod]
+
+# ========================
+# Virtual environments
+# ========================
+venv/
+.venv/
+env/
+ENV/
+
+# ========================
+# Environment files
+# ========================
+.env
+.flaskenv
+
+# ========================
+# Flask / runtime
+# ========================
+instance/
+*.log
+
+# ========================
+# Database files
+# ========================
+*.db
+*.sqlite3
+
+# ========================
+# Migrations cache
+# ========================
+migrations/__pycache__/
+
+# ========================
+# IDE / OS files
+# ========================
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
