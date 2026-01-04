@@ -1,8 +1,8 @@
-"""user and post table cause of error
+"""two relations
 
-Revision ID: eda694a2e59c
+Revision ID: 06e56711b4f6
 Revises: 
-Create Date: 2025-12-31 20:09:49.354566
+Create Date: 2026-01-03 13:17:35.555149
 
 """
 from alembic import op
@@ -10,7 +10,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = 'eda694a2e59c'
+revision = '06e56711b4f6'
 down_revision = None
 branch_labels = None
 depends_on = None
@@ -22,7 +22,7 @@ def upgrade():
     sa.Column('id', sa.Integer(), nullable=False),
     sa.Column('username', sa.String(length=64), nullable=False),
     sa.Column('email', sa.String(length=120), nullable=False),
-    sa.Column('password_hash', sa.String(length=256), nullable=False),
+    sa.Column('password_hash', sa.String(length=256), nullable=True),
     sa.PrimaryKeyConstraint('id')
     )
     with op.batch_alter_table('users', schema=None) as batch_op:
