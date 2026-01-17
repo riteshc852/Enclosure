@@ -30,6 +30,9 @@ instance/
 *.db
 *.sqlite3
 
+#Logs
+logs/
+
 # ========================
 # Migrations cache
 # ========================

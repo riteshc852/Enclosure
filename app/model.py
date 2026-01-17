@@ -9,14 +9,13 @@ from hashlib import md5
 from app import login
 # in python db model every row is defined as single object
 # db.Model is class inheritance from sqlAlchemy  
-
+    
 class users(UserMixin , db.Model):
     
     id: sor.Mapped[int] = sor.mapped_column(primary_key=True )
     username : sor.Mapped[str] = sor.mapped_column(sa.String(64) , index=True , unique=True)
     email : sor.Mapped[str] = sor.mapped_column(sa.String(120) , index=True , unique=True)
     password_hash : sor.Mapped[Optional[str]] = sor.mapped_column(sa.String(256))
-    # this method is used for log and errors this function returns where the problem is in relation
     posts : sor.WriteOnlyMapped["Post"] = sor.relationship(back_populates="author")
     about_me : sor.Mapped[Optional[str]] = sor.mapped_column(sa.String(140))
     last_seen : sor.Mapped[Optional[datetime]] = sor.mapped_column(default=lambda : datetime.now(timezone.utc))
@@ -31,6 +30,7 @@ class users(UserMixin , db.Model):
     def avatar(self , size):
         digest = md5(self.email.lower().encode('utf-8')).hexdigest()
         return f"https://www.gravatar.com/avatar/{digest}?d=identicon&s={size}"
+    # this method is used for log and errors this function returns where the problem is in relation
     def __repr__(self):
         return '<User {}>'.format(self.username)
  
