@@ -6,7 +6,8 @@
       {% else %}
       <title>Welcome to Enclosure</title>
       {% endif %}
-    </head>
+<link rel="stylesheet" href="https://unpkg.com/@knadh/oat/oat.min.css">    
+</head>
     <body>
         <div>
           Enclosure: 
@@ -29,5 +30,6 @@
         {% endif %}
         {% endwith %}     
         {% block content %}{% endblock %}
+<script src="https://unpkg.com/@knadh/oat/oat.min.js" defer></script>
     </body>
 </html>
